@@ -1,0 +1,219 @@
+/* ================================
+   COLOUR VARIABLES
+================================ */
+:root {
+    --purple: #9D4EDD;
+    --orange: #FF8C42;
+    --green: #3ECF8E;
+    --white: #FFFFFF;
+    --black: #0A0E27;
+    --blue: #00D9FF;
+    --dark-gray: #1A1F3A;
+    --light-gray: #F5F5F5;
+
+    --transition: 0.3s ease;
+    --glow: 0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+/* ================================
+   GLOBAL RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+.navbar {
+    background: linear-gradient(135deg, var(--black), var(--dark-gray));
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 217, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--blue), var(--purple), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--blue);
+    text-shadow: var(--glow);
+}
+
+/* ================================
+   HERO
+================================ */
+.hero {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    color: var(--white);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    background: var(--blue);
+    color: var(--black);
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--purple);
+    color: var(--white);
+    box-shadow: var(--glow);
+}
+
+.btn-alt {
+    background: var(--orange);
+    color: var(--white);
+}
+
+/* ================================
+   SECTIONS
+================================ */
+.section-light {
+    background: var(--light-gray);
+    padding: 4rem 2rem;
+}
+
+.section-purple {
+    background: linear-gradient(135deg, var(--purple), #5A189A);
+    color: var(--white);
+    padding: 4rem 2rem;
+}
+
+.section-orange {
+    background: linear-gradient(135deg, var(--orange), #FF6A00);
+    color: var(--white);
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+}
+
+/* ================================
+   CARDS
+================================ */
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.15);
+    transition: var(--transition);
+    text-align: center;
+    font-weight: bold;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(157, 78, 221, 0.4);
+}
+
+/* ================================
+   GRID
+================================ */
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ================================
+   FOOTER
+================================ */
+.footer {
+    background: linear-gradient(135deg, var(--black), var(--dark-gray));
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+    .grid-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
